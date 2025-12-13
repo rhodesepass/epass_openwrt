@@ -1,0 +1,50 @@
+--- a/drivers/gpu/drm/panel/panel-simple.c
++++ b/drivers/gpu/drm/panel/panel-simple.c
+@@ -2195,12 +2195,36 @@
+ 	.num_modes = 1,
+ 	.bpc = 8,
+ 	.size = {
+-		.width = 108,
++		.width = 37,
+ 		.height = 65,
+ 	},
+ 	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
+ };
+ 
++static const struct drm_display_mode lattland_mostima_mode = {
++       .clock = 24000,
++       .hdisplay = 384,
++       .hsync_start = 384 + (24 + 60),
++       .hsync_end = 384 + (24 + 60) + 6,
++       .htotal = 384 + (24 + 60) + 6 + (18 + 60 - 24),
++       .vdisplay = 640,
++       .vsync_start = 640 + 16,
++       .vsync_end = 640 + 16 + 4,
++       .vtotal = 640 + 16 + 4 + 10 - 1,
++
++};
++
++static const struct panel_desc lattland_mostima = {
++       .modes = &lattland_mostima_mode,
++       .num_modes = 1,
++       .bpc = 6,
++       .size = {
++               .width = 108,
++               .height = 65,
++       },
++       .bus_format = MEDIA_BUS_FMT_RGB565_1X16,
++};
++
+ static const struct drm_display_mode frida_frd350h54004_modes[] = {
+ 	{ /* 60 Hz */
+ 		.clock = 6000,
+@@ -4793,6 +4817,9 @@
+ 	}, {
+ 		.compatible = "foxlink,fl500wvr00-a0t",
+ 		.data = &foxlink_fl500wvr00_a0t,
++   }, {
++       .compatible = "lattland,mostima",
++       .data = &lattland_mostima,
+ 	}, {
+ 		.compatible = "frida,frd350h54004",
+ 		.data = &frida_frd350h54004,

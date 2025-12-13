@@ -29,6 +29,29 @@
 		// };
 	};
 
+	panel: panel {
+		// compatible = "qiaodian,qd43003c0-40", "simple-panel";	// 4.3 inch,480x272
+		//compatible = "foxlink,fl500wvr00-a0t", "simple-panel";	// 4.3 & 5 inch,800x480
+		//compatible = "hongxiangrui,hxr401-40", "simple-panel";	// 480x480
+		//compatible = "huadi,hd395004c40-40", "simple-panel";	// 720x720
+		//compatible = "avic,tm070ddh03", "simple-panel";	// 1024x600
+		compatible = "lattland,mostima", "simple-panel";	// 360x640 3 inch
+
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		port@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			panel_input: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&tcon0_out_lcd>;
+			};
+		};
+	};
+
 	reg_vcc3v3: vcc3v3 {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc3v3";
@@ -177,6 +200,7 @@
 	pinctrl-0 = <&uart0_pe_pins>;
 	status = "okay";
 };
+
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart1_pa_pins>;
@@ -201,6 +225,31 @@
 
 &usbphy {
 	status = "okay";
+};
+
+&de {
+	status = "okay";
+};
+
+&fe0 {
+	status = "okay";
+};
+
+&be0 {
+	status = "okay";
+};
+
+&tcon0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&lcd_rgb565_pins>;
+	status = "okay";
+};
+
+&tcon0_out {
+	tcon0_out_lcd: endpoint@0 {
+		reg = <0>;
+		remote-endpoint = <&panel_input>;
+	};
 };
 
 &lradc {

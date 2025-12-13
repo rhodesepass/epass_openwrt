@@ -7,7 +7,7 @@ define Profile/Default
   PACKAGES:= \
 	kmod-rtc-sunxi \
 	kmod-sun4i-emac \
-	swconfig \
+	swconfig
   PRIORITY := 1
 endef
 
