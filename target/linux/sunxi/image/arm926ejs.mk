@@ -24,3 +24,12 @@ define Device/popstick-v1.1
   SOC := suniv-f1c200s
 endef
 TARGET_DEVICES += popstick-v1.1
+
+define Device/arknights_epass
+  $(call Device/FitImageGzip)
+  DEVICE_VENDOR := Shirogane
+  DEVICE_MODEL := Arknights ePass v0.3.1
+  DEVICE_PACKAGES := kmod-rtc-sunxi
+  SOC := suniv-f1c200s
+endef
+TARGET_DEVICES += arknights_epass

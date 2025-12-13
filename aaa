@@ -1,0 +1,15 @@
+--- /home/kazagumo/epass_op/build_dir/target-arm_arm926ej-s_musl_eabi/linux-sunxi_arm926ejs/linux-6.12.60/arch/arm/boot/dts/allwinner/Makefile.orig	2025-12-13 05:32:22.173855042 +0000
++++ /home/kazagumo/epass_op/build_dir/target-arm_arm926ej-s_musl_eabi/linux-sunxi_arm926ejs/linux-6.12.60/arch/arm/boot/dts/allwinner/Makefile	2025-12-13 05:35:01.665672558 +0000
+@@ -268,8 +268,10 @@
+ dtb-$(CONFIG_MACH_SUNIV) += \
+ 	suniv-f1c100s-licheepi-nano.dtb \
+ 	suniv-f1c200s-lctech-pi.dtb \
+-	suniv-f1c200s-popstick-v1.1.dtb
++	suniv-f1c200s-popstick-v1.1.dtb \
++	suniv-f1c200s-epass.dtb
+ dtb-$(CONFIG_MACH_SUNIV) += \
+ 	suniv-f1c100s-licheepi-nano.dtb \
+ 	suniv-f1c200s-lctech-pi.dtb \
+-	suniv-f1c200s-popstick-v1.1.dtb
++	suniv-f1c200s-popstick-v1.1.dtb \
++	suniv-f1c200s-epass.dtb

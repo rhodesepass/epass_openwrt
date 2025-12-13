@@ -11,6 +11,14 @@ full customization, to use the device in ways never envisioned.
 
 Sunshine!
 
+## Current Progress
+  This branch is only For F1C200s,only limited functions avaliable.
+  [] display engine
+  [] tcon
+  [] video engine
+  [x] usb
+  [x] mmc
+
 ## Download
 
 Built firmware images are available for many architectures and come with a

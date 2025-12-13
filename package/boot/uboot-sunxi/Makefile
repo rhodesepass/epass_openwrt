@@ -271,6 +271,13 @@ define U-Boot/popstick
   BUILD_DEVICES:=popstick-v1.1
 endef
 
+define U-Boot/arknights_epass
+  BUILD_SUBTARGET:=arm926ejs
+  NAME:=Epass
+  UENV:=f1c
+  BUILD_DEVICES:=arknights_epass
+endef
+
 define U-Boot/libretech_all_h3_cc_h5
   BUILD_SUBTARGET:=cortexa53
   NAME:=Libre Computer ALL-H3-CC H5
@@ -452,6 +459,7 @@ UBOOT_TARGETS := \
 	orangepi_zero3 \
 	pangolin \
 	popstick \
+  arknights_epass \
 	pine64_plus \
 	Sinovoip_BPI_M3 \
 	sopine_baseboard \
