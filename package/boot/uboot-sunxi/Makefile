@@ -9,8 +9,11 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_VERSION:=2025.01
-PKG_HASH:=cdef7d507c93f1bbd9f015ea9bc21fa074268481405501945abc6f854d5b686f
+PKG_VERSION:=2025.07
+
+PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/rhodesepass/uboot.git
+PKG_SOURCE_VERSION:=f0a13325ee2834648535c44fd13b7834a58e7d7c
 
 PKG_MAINTAINER:=Zoltan HERPAI <wigyori@uid0.hu>
 
@@ -469,12 +472,10 @@ UBOOT_TARGETS := \
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 
 UBOOT_CUSTOMIZE_CONFIG := \
-	--disable TOOLS_KWBIMAGE \
-	--disable TOOLS_LIBCRYPTO \
 	--disable TOOLS_MKEFICAPSULE
 
 UBOOT_MAKE_FLAGS += \
-	BL31=$(STAGING_DIR_IMAGE)/bl31_sunxi-$(ATF).bin SCP=/dev/null
+	BL31=$(STAGING_DIR_IMAGE)/bl31_sunxi-$(ATF).bin SCP=/dev/null 
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
