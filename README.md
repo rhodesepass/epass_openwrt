@@ -13,11 +13,12 @@ Sunshine!
 
 ## Current Progress
   This branch is only For F1C200s,only limited functions avaliable.
-  [x] display engine
-  [x] tcon
-  [] video engine
-  [x] usb
-  [x] mmc
+-  [x] display engine
+-  [x] tcon
+-  [] video engine
+-  [x] usb
+-  [x] mmc
+-  [ ] spi/i2c
 
 ## Download
 
